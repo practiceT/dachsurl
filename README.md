@@ -18,3 +18,33 @@ OPTIONS:
   -f, --file <FILE>  入力するファイルを指定します。
 ```
 ・入力ファイルは、1行に1つのURLが記載されたテキストファイルとする。
+
+## プロジェクトについて
+
+### 開発者
+HAYASHI Tomokazu
+
+### ライセンス
+![Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+- Permissions
+  - Commercial use
+  - Modification
+  - Distribution
+  - Patent use
+  - Private use
+
+- Limitations
+  - Trademark use
+  - Liability
+  - Warranty
+
+- Conditions
+  - License and copyright notice
+  - State changes
+
+### アイコン
+![Icon](docs/images/dachsurl.svg)
+
+### 名前の由来
+URLをダックスフント(Dachshund)の足のように短くするという由来です。
