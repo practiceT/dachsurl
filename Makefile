@@ -1,10 +1,10 @@
 PACKAGE_LIST := $(shell go list ./...)
 VERSION := 0.1.0
-NAME := urleap
+NAME := dachsurl
 DIST := $(NAME)-$(VERSION)
 
 build: test
-	go build -o urleap $(PACKAGE_LIST)
+	go build -o dachsurl $(PACKAGE_LIST)
 
 test:
 	go test -covermode=count -coverprofile=coverage.out $(PACKAGE_LIST)
@@ -30,4 +30,4 @@ distclean: clean
 	rm -f dist coverage.out
 
 clean:
-	rm -f urleap
+	rm -f dachsurl
