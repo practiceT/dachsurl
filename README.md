@@ -54,7 +54,7 @@ HAYASHI Tomokazu
   - State changes
 
 ### アイコン
-<--! ![Icon](docs/images/dachsurl.svg) -->
+<!-- ![Icon](docs/images/dachsurl.svg) -->
 <img src="docs/images/dachsurl.svg" width="80%">
 
 ### 名前の由来
