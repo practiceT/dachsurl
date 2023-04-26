@@ -5,8 +5,8 @@ DIST := $(NAME)-$(VERSION)
 
 # $(warning PACKAGE_LIST = $(PACKAGE_LIST))
 
-all:
-	:
+all: dachsurl
+	@:
 
 dachsurl: coverage.out
 	go build -o $(NAME) $(PACKAGE_LIST)
