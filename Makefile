@@ -1,5 +1,5 @@
 PACKAGE_LIST := $(shell go list ./...)
-VERSION := 0.1.0
+VERSION := 1.0.0
 NAME := dachsurl
 DIST := $(NAME)-$(VERSION)
 
@@ -27,7 +27,8 @@ dist: build
 	@$(call _createDist,linux,386,)
 
 distclean: clean
-	rm -f dist coverage.out
+	rm -rf dist
+	rm -f coverage.out
 
 clean:
 	rm -f dachsurl
