@@ -55,7 +55,7 @@ HAYASHI Tomokazu
 
 ### アイコン
 <!-- ![Icon](docs/images/dachsurl.svg) -->
-<img src="docs/images/dachsurl.svg" width="80%">
+<img src="docs/images/dachsurl.svg" width="50%">
 
 ### 名前の由来
 URLをダックスフント(Dachshund)の足のように短くするという由来です。
