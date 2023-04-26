@@ -5,18 +5,14 @@ DIST := $(NAME)-$(VERSION)
 
 # $(warning PACKAGE_LIST = $(PACKAGE_LIST))
 
-all: build test
+all:
+	:
 
-build:
+dachsurl: coverage.out
 	go build -o $(NAME) $(PACKAGE_LIST)
 
-test:
-	gofmt -l -s .
+coverage.out:
 	go test -covermode=count -coverprofile=coverage.out $(PACKAGE_LIST)
 
-distclean: clean
-	rm -rf dist
-	rm -f coverage.out
-
 clean:
-	rm -rf dachsurl
+	rm -rf dachsurl dist coverage.out
