@@ -3,7 +3,7 @@ VERSION := 1.0.0
 NAME := dachsurl
 DIST := $(NAME)-$(VERSION)
 
-$(warning PACKAGE_LIST = $(PACKAGE_LIST))
+# $(warning PACKAGE_LIST = $(PACKAGE_LIST))
 
 all: build test
 
