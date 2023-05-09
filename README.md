@@ -1,5 +1,5 @@
 # dachsurl
-URL短縮ツール
+URL短縮ツール(開発中)
 
 <!-- https://www.apache.org/licenses/LICENSE-2.0 -->
 
