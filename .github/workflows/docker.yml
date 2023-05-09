@@ -56,5 +56,5 @@ jobs:
           file: Dockerfile
           platforms: linux/amd64,linux/arm64
           tags: |
-            ghcr.io/tamada/urleap:${{ steps.vars.outputs.tag }}
-            ghcr.io/tamada/urleap:latest
+            ghcr.io/practiceT/dachsurl:${{ steps.vars.outputs.tag }}
+            ghcr.io/practiceT/dachsurl:latest
