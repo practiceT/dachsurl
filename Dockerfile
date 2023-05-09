@@ -1,4 +1,5 @@
-FROM golang:1.18-bullseye as builder
+
+FROM golang:1.20-bullseye as builder
 
 ADD . /go/dachsurl
 WORKDIR /go/dachsurl
