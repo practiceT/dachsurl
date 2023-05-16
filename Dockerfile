@@ -1,4 +1,3 @@
-
 FROM golang:1.19-bullseye as builder
 
 ADD . /go/dachsurl
