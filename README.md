@@ -37,17 +37,23 @@ HAYASHI Tomokazu
 ### ライセンス
 [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
+check_mark_button
+check_mark_button
+check_mark_button
+check_mark_button
+check_mark_button
+
 - Permissions
-  - Commercial use :check_mark_button:
-  - Modification :check_mark_button:
-  - Distribution :check_mark_button:
-  - Patent use :check_mark_button:
-  - Private use :check_mark_button:
+  - ✅ Commercial use
+  - ✅ Modification
+  - ✅ Distribution
+  - ✅ Patent use
+  - ✅ Private use
 
 - Limitations
-  - Trademark use :cross_mark:
-  - Liability :cross_mark:
-  - Warranty :cross_mark:
+  - ❌ Trademark use
+  - ❌ Liability
+  - ❌ Warranty
 
 - Conditions
   - License and copyright notice
