@@ -19,7 +19,7 @@ URLや足を長くしたいというご要望にはお応えできません。
 ## 使用方法
 ```
 Usage:
-  dachsurl [OPTIONS] [URL...]
+  dachsurl [OPTIONS] [URLs...]
 
 OPTIONS:
   -h, --help         ヘルプメッセージを表示します。
