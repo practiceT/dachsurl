@@ -1,5 +1,5 @@
 # dachsurl
-URL短縮ツール(開発中) :pleading_face:
+URL短縮ツール(開発中) :pleading_face: :pleading_face:
 
 <!-- https://www.apache.org/licenses/LICENSE-2.0 -->
 
