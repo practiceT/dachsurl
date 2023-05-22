@@ -1,5 +1,5 @@
 # dachsurl
-URL短縮ツール(開発中) :pleading_face:
+URL短縮ツール(開発中) :pleading_face: :pleading_face:
 
 <!-- https://www.apache.org/licenses/LICENSE-2.0 -->
 
@@ -9,7 +9,7 @@ URL短縮ツール(開発中) :pleading_face:
 [![Go Report Card](https://goreportcard.com/badge/github.com/practiceT/dachsurl)](https://goreportcard.com/report/github.com/practiceT/dachsurl)
 
 ![GitHub](https://img.shields.io/github/license/practiceT/dachsurl?style=plastic)
-![Version](https://img.shields.io/badge/Version-0.1.0-informational)
+![Version](https://img.shields.io/badge/Version-0.1.1-informational)
 
 ## 概要
 CLIによるシンプルなURL短縮ツール。
@@ -19,7 +19,7 @@ URLや足を長くしたいというご要望にはお応えできません。
 ## 使用方法
 ```
 Usage:
-  dachsurl [OPTIONS] [URL...]
+  dachsurl [OPTIONS] [URLs...]
 
 OPTIONS:
   -h, --help         ヘルプメッセージを表示します。
@@ -37,17 +37,23 @@ HAYASHI Tomokazu
 ### ライセンス
 [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
+check_mark_button
+check_mark_button
+check_mark_button
+check_mark_button
+check_mark_button
+
 - Permissions
-  - Commercial use :check_mark_button:
-  - Modification :check_mark_button:
-  - Distribution :check_mark_button:
-  - Patent use :check_mark_button:
-  - Private use :check_mark_button:
+  - ✅ Commercial use
+  - ✅ Modification
+  - ✅ Distribution
+  - ✅ Patent use
+  - ✅ Private use
 
 - Limitations
-  - Trademark use :cross_mark:
-  - Liability :cross_mark:
-  - Warranty :cross_mark:
+  - ❌ Trademark use
+  - ❌ Liability
+  - ❌ Warranty
 
 - Conditions
   - License and copyright notice
