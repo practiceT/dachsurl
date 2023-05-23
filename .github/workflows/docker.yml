@@ -56,5 +56,5 @@ jobs:
           file: Dockerfile
           platforms: linux/amd64,linux/arm64
           tags: |
-            ghcr.io/practice_t/dachsurl:${{ steps.vars.outputs.tag }}
-            ghcr.io/practice_t/dachsurl:latest
+            ghcr.io/practicet/dachsurl:${{ steps.vars.outputs.tag }}
+            ghcr.io/practicet/dachsurl:latest
