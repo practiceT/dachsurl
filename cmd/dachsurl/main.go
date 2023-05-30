@@ -9,7 +9,7 @@ import (
 	flag "github.com/spf13/pflag"
 )
 
-const VERSION = "0.1.2"
+const VERSION = "0.1.3"
 
 func versionString(args []string) string {
 	prog := "dachsurl"

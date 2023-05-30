@@ -16,13 +16,13 @@ func Example_Help() {
 	//     -t, --token <TOKEN>      specify the token for the service. This option is mandatory.
 	//     -q, --qrcode <FILE>      include QR-code of the URL in the output.
 	//     -c, --config <CONFIG>    specify the configuration file.
-	//     -g, --group <GROUP>      specify the group name for the service. Default is "urleap"
+	//     -g, --group <GROUP>      specify the group name for the service. Default is "dachsurl"
 	//     -d, --delete             delete the specified shorten URL.
 	//     -h, --help               print this mesasge and exit.
 	//     -v, --version            print the version and exit.
 	// ARGUMENT
 	//     URL     specify the url for shortening. this arguments accept multiple values.
-	//             if no arguments were specified, urleap prints the list of available shorten urls.
+	//             if no arguments were specified, dachsurl prints the list of available shorten urls.
 }
 
 func Test_Main(t *testing.T) {
