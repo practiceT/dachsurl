@@ -1,18 +1,18 @@
 PACKAGE_LIST := $(shell go list ./...)
-VERSION := 0.1.1
+VERSION := 0.1.2
 NAME := dachsurl
 USER_NAME := practiceT
 REPO_NAME := $(USER_NAME)/$(NAME)
 DIST := $(NAME)-$(VERSION)
 
-urleap: coverage.out
-	go build -o $(NAME) $(PACKAGE_LIST)
+$(NAME): coverage.out cmd/$(NAME)/main.go *.go
+	go build -o $(NAME) cmd/$(NAME)/main.go
 
 coverage.out:
 	go test -covermode=count \
 		-coverprofile=coverage.out $(PACKAGE_LIST)
 
-docker: urleap
+docker: $(NAME)
 #	docker build -t ghcr.io/$(REPO_NAME):$(VERSION) -t ghcr.io/$(REPO_NAME):latest .
 	docker buildx build -t ghcr.io/$(REPO_NAME):$(VERSION) \
 		-t ghcr.io/$(REPO_NAME):latest --platform=linux/arm64/v8,linux/amd64 --push .
@@ -26,7 +26,7 @@ define _createDist
 	tar cfz dist/$(DIST)_$(1)_$(2).tar.gz -C dist/$(1)_$(2) $(DIST)
 endef
 
-dist: urleap
+dist: $(NAME)
 	@$(call _createDist,darwin,amd64,)
 	@$(call _createDist,darwin,arm64,)
 	@$(call _createDist,windows,amd64,.exe)
