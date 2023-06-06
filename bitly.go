@@ -149,10 +149,6 @@ func (bitly *Bitly) Delete(config *Config, shortenURL string) error {
 	return err
 }
 
-func (bitly *Bitly) QRCode(config *Config, shortenURL string) ([]byte, error) {
-	return []byte{}, fmt.Errorf("not implement yet")
-}
-
 func sendRequest(request *http.Request, config *Config) ([]byte, error) {
 	response, err := sendRequestImpl(request, config)
 	if err != nil {
