@@ -1,0 +1,8 @@
+{
+  "providers": [
+    {
+      "api": "bit.ly",
+      "api_version": "v4",
+    }
+  ]
+}
