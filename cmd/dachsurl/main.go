@@ -9,7 +9,7 @@ import (
 	flag "github.com/spf13/pflag"
 )
 
-const VERSION = "0.1.3"
+const VERSION = "0.1.4"
 
 func versionString(args []string) string {
 	prog := "dachsurl"
@@ -30,16 +30,14 @@ func helpMessage(args []string) string {
 	}
 	return fmt.Sprintf(`%s [OPTIONS] [URLs...]
 OPTIONS
-    -t, --token <TOKEN>      specify the token for the service. This option is mandatory.
-    -q, --qrcode <FILE>      include QR-code of the URL in the output.
-    -c, --config <CONFIG>    specify the configuration file.
-    -g, --group <GROUP>      specify the group name for the service. Default is "dachsurl"
-    -d, --delete             delete the specified shorten URL.
-    -h, --help               print this mesasge and exit.
-    -v, --version            print the version and exit.
+    -t, --token <TOKEN>      bit.lyのトークンを指定します. (必須オプション)
+    -c, --clipboard          短縮URLをクリップボードに出力します.
+    -d, --delete             指定した短縮URLを削除します.
+    -h, --help               このメッセージを表示し、終了します.
+    -v, --version            バージョンを表示し、終了します.
 ARGUMENT
-    URL     specify the url for shortening. this arguments accept multiple values.
-            if no arguments were specified, dachsurl prints the list of available shorten urls.`, prog)
+    URL     URLは短縮用のURLを指定します。この引数は複数指定できます.
+            引数が指定されていない場合、dachsurlは利用可能な短縮URLのリストを表示します.`, prog)
 }
 
 type DachsurlError struct {
@@ -52,17 +50,13 @@ func (e DachsurlError) Error() string {
 }
 
 type flags struct {
-	deleteFlag    bool
-	listGroupFlag bool
-	helpFlag      bool
-	versionFlag   bool
+	deleteFlag  bool
+	helpFlag    bool
+	versionFlag bool
 }
 
 type runOpts struct {
-	token  string
-	qrcode string
-	config string
-	group  string
+	token string
 }
 
 /*
@@ -79,14 +73,10 @@ func newOptions() *options {
 
 func (opts *options) mode(args []string) dachsurl.Mode {
 	switch {
-	case opts.flagSet.listGroupFlag:
-		return dachsurl.ListGroup
 	case len(args) == 0:
 		return dachsurl.List
 	case opts.flagSet.deleteFlag:
 		return dachsurl.Delete
-	case opts.runOpt.qrcode != "":
-		return dachsurl.QRCode
 	default:
 		return dachsurl.Shorten
 	}
@@ -99,14 +89,10 @@ func buildOptions(args []string) (*options, *flag.FlagSet) {
 	opts := newOptions()
 	flags := flag.NewFlagSet(args[0], flag.ContinueOnError)
 	flags.Usage = func() { fmt.Println(helpMessage(args)) }
-	flags.StringVarP(&opts.runOpt.token, "token", "t", "", "specify the token for the service. This option is mandatory.")
-	flags.StringVarP(&opts.runOpt.qrcode, "qrcode", "q", "", "include QR-code of the URL in the output.")
-	flags.StringVarP(&opts.runOpt.config, "config", "c", "", "specify the configuration file.")
-	flags.StringVarP(&opts.runOpt.group, "group", "g", "", "specify the group name for the service. Default is \"dachsurl\"")
-	flags.BoolVarP(&opts.flagSet.listGroupFlag, "list-group", "L", false, "list the groups. This is hidden option.")
-	flags.BoolVarP(&opts.flagSet.deleteFlag, "delete", "d", false, "delete the specified shorten URL.")
-	flags.BoolVarP(&opts.flagSet.helpFlag, "help", "h", false, "print this mesasge and exit.")
-	flags.BoolVarP(&opts.flagSet.versionFlag, "version", "v", false, "print the version and exit.")
+	flags.StringVarP(&opts.runOpt.token, "token", "t", "", "bit.lyのトークンを指定します. (必須オプション)")
+	flags.BoolVarP(&opts.flagSet.deleteFlag, "delete", "d", false, "指定した短縮URLを削除します.")
+	flags.BoolVarP(&opts.flagSet.helpFlag, "help", "h", false, "このメッセージを表示し、終了します.")
+	flags.BoolVarP(&opts.flagSet.versionFlag, "version", "v", false, "バージョンを表示し、終了します.")
 	return opts, flags
 }
 
@@ -125,7 +111,7 @@ func parseOptions(args []string) (*options, []string, *DachsurlError) {
 		return nil, nil, &DachsurlError{statusCode: 0, message: ""}
 	}
 	if opts.runOpt.token == "" {
-		return nil, nil, &DachsurlError{statusCode: 3, message: "no token was given"}
+		return nil, nil, &DachsurlError{statusCode: 3, message: "トークンが指定されていません"}
 	}
 	return opts, flags.Args(), nil
 }
@@ -154,17 +140,6 @@ func listUrls(bitly *dachsurl.Bitly, config *dachsurl.Config) error {
 	return nil
 }
 
-func listGroups(bitly *dachsurl.Bitly, config *dachsurl.Config) error {
-	groups, err := bitly.Groups(config)
-	if err != nil {
-		return err
-	}
-	for i, group := range groups {
-		fmt.Printf("GUID[%d] %s\n", i, group.Guid)
-	}
-	return nil
-}
-
 func performImpl(args []string, executor func(url string) error) *DachsurlError {
 	for _, url := range args {
 		err := executor(url)
@@ -176,16 +151,13 @@ func performImpl(args []string, executor func(url string) error) *DachsurlError 
 }
 
 func perform(opts *options, args []string) *DachsurlError {
-	bitly := dachsurl.NewBitly(opts.runOpt.group)
-	config := dachsurl.NewConfig(opts.runOpt.config, opts.mode(args))
+	bitly := dachsurl.NewBitly("")
+	config := dachsurl.NewConfig("", opts.mode(args))
 	config.Token = opts.runOpt.token
 	switch config.RunMode {
 	case dachsurl.List:
 		err := listUrls(bitly, config)
 		return makeError(err, 1)
-	case dachsurl.ListGroup:
-		err := listGroups(bitly, config)
-		return makeError(err, 2)
 	case dachsurl.Delete:
 		return performImpl(args, func(url string) error {
 			return deleteEach(bitly, config, url)
