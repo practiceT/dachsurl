@@ -31,7 +31,7 @@ func helpMessage(args []string) string {
 	return fmt.Sprintf(`%s [OPTIONS] [URLs...]
 OPTIONS
     -t, --token <TOKEN>      bit.lyのトークンを指定します. (必須オプション)
-    -c, --config <CONFIG>    設定ファイルを指定します.
+    -c, --clipboard          短縮URLをクリップボードに出力します.
     -d, --delete             指定した短縮URLを削除します.
     -h, --help               このメッセージを表示し、終了します.
     -v, --version            バージョンを表示し、終了します.
@@ -56,8 +56,7 @@ type flags struct {
 }
 
 type runOpts struct {
-	token  string
-	config string
+	token string
 }
 
 /*
@@ -91,7 +90,6 @@ func buildOptions(args []string) (*options, *flag.FlagSet) {
 	flags := flag.NewFlagSet(args[0], flag.ContinueOnError)
 	flags.Usage = func() { fmt.Println(helpMessage(args)) }
 	flags.StringVarP(&opts.runOpt.token, "token", "t", "", "bit.lyのトークンを指定します. (必須オプション)")
-	flags.StringVarP(&opts.runOpt.config, "config", "c", "", "設定ファイルを指定します.")
 	flags.BoolVarP(&opts.flagSet.deleteFlag, "delete", "d", false, "指定した短縮URLを削除します.")
 	flags.BoolVarP(&opts.flagSet.helpFlag, "help", "h", false, "このメッセージを表示し、終了します.")
 	flags.BoolVarP(&opts.flagSet.versionFlag, "version", "v", false, "バージョンを表示し、終了します.")
@@ -142,17 +140,6 @@ func listUrls(bitly *dachsurl.Bitly, config *dachsurl.Config) error {
 	return nil
 }
 
-func listGroups(bitly *dachsurl.Bitly, config *dachsurl.Config) error {
-	groups, err := bitly.Groups(config)
-	if err != nil {
-		return err
-	}
-	for i, group := range groups {
-		fmt.Printf("GUID[%d] %s\n", i, group.Guid)
-	}
-	return nil
-}
-
 func performImpl(args []string, executor func(url string) error) *DachsurlError {
 	for _, url := range args {
 		err := executor(url)
@@ -165,7 +152,7 @@ func performImpl(args []string, executor func(url string) error) *DachsurlError 
 
 func perform(opts *options, args []string) *DachsurlError {
 	bitly := dachsurl.NewBitly("")
-	config := dachsurl.NewConfig(opts.runOpt.config, opts.mode(args))
+	config := dachsurl.NewConfig("", opts.mode(args))
 	config.Token = opts.runOpt.token
 	switch config.RunMode {
 	case dachsurl.List:

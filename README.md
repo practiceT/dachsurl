@@ -9,7 +9,7 @@ URL短縮ツール(開発中) :pleading_face:
 [![Go Report Card](https://goreportcard.com/badge/github.com/practiceT/dachsurl)](https://goreportcard.com/report/github.com/practiceT/dachsurl)
 
 ![GitHub](https://img.shields.io/github/license/practiceT/dachsurl?style=plastic)
-![Version](https://img.shields.io/badge/Version-0.1.1-informational)
+![Version](https://img.shields.io/badge/Version-0.1.4-informational)
 
 ## 概要
 CLIによるシンプルなURL短縮ツール。
@@ -21,13 +21,16 @@ URLや足を長くしたいというご要望にはお応えできません。
 Usage:
   dachsurl [OPTIONS] [URLs...]
 
-OPTIONS:
-  -h, --help         ヘルプメッセージを表示します。
-  -V, --version      バージョンバージョン情報を表示します。
-  -c, --clipboard    クリップボードに出力します。
-  -f, --file <FILE>  入力するファイルを指定します。
+OPTIONS
+    -t, --token <TOKEN>      bit.lyのトークンを指定します. (必須オプション)
+    -c, --clipboard          短縮URLをクリップボードに出力します.
+    -d, --delete             指定した短縮URLを削除します.
+    -h, --help               このメッセージを表示し、終了します.
+    -v, --version            バージョンを表示し、終了します.
+ARGUMENT
+    URL     URLは短縮用のURLを指定します。この引数は複数指定できます.
+            引数が指定されていない場合、dachsurlは利用可能な短縮URLのリストを表示します.
 ```
-・入力ファイルは、1行に1つのURLが記載されたテキストファイルとする。
 
 ## プロジェクトについて
 
@@ -36,12 +39,6 @@ HAYASHI Tomokazu
 
 ### ライセンス
 [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
-
-check_mark_button
-check_mark_button
-check_mark_button
-check_mark_button
-check_mark_button
 
 - Permissions
   - ✅ Commercial use

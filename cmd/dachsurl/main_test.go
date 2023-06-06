@@ -14,12 +14,6 @@ func Example_Token() {
 	// トークンが指定されていません
 }
 
-func Example_Config() {
-	goMain([]string{"./dachsurl", "--config"})
-	// Output:
-	// トークンが指定されていません
-}
-
 func Example_Delete() {
 	goMain([]string{"./dachsurl", "--delete"})
 	// Output:
@@ -32,7 +26,7 @@ func Example_Help() {
 	// dachsurl [OPTIONS] [URLs...]
 	// OPTIONS
 	//     -t, --token <TOKEN>      bit.lyのトークンを指定します. (必須オプション)
-	//     -c, --config <CONFIG>    設定ファイルを指定します.
+	//     -c, --clipboard          短縮URLをクリップボードに出力します.
 	//     -d, --delete             指定した短縮URLを削除します.
 	//     -h, --help               このメッセージを表示し、終了します.
 	//     -v, --version            バージョンを表示し、終了します.
