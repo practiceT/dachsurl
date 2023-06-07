@@ -119,7 +119,7 @@ func (bitly *Bitly) Shorten(config *Config, url string) (*ShortenUrl, error) {
 
 func handleShortenResponse(data []byte) (*ShortenUrl, error) {
 	result := &ShortenUrl{}
-	fmt.Println("result:", string(data))
+	// fmt.Println("result:", string(data))
 	err := json.Unmarshal(data, result)
 	if err != nil {
 		return nil, err

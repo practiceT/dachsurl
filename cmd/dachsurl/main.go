@@ -5,11 +5,12 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/atotto/clipboard"
 	"github.com/practiceT/dachsurl"
 	flag "github.com/spf13/pflag"
 )
 
-const VERSION = "0.1.4"
+const VERSION = "0.1.5"
 
 func versionString(args []string) string {
 	prog := "dachsurl"
@@ -50,9 +51,10 @@ func (e DachsurlError) Error() string {
 }
 
 type flags struct {
-	deleteFlag  bool
-	helpFlag    bool
-	versionFlag bool
+	deleteFlag    bool
+	helpFlag      bool
+	versionFlag   bool
+	clipboardFlag bool
 }
 
 type runOpts struct {
@@ -91,6 +93,7 @@ func buildOptions(args []string) (*options, *flag.FlagSet) {
 	flags.Usage = func() { fmt.Println(helpMessage(args)) }
 	flags.StringVarP(&opts.runOpt.token, "token", "t", "", "bit.lyのトークンを指定します. (必須オプション)")
 	flags.BoolVarP(&opts.flagSet.deleteFlag, "delete", "d", false, "指定した短縮URLを削除します.")
+	flags.BoolVarP(&opts.flagSet.clipboardFlag, "clipboard", "c", false, "短縮URLをクリップボードに出力します.")
 	flags.BoolVarP(&opts.flagSet.helpFlag, "help", "h", false, "このメッセージを表示し、終了します.")
 	flags.BoolVarP(&opts.flagSet.versionFlag, "version", "v", false, "バージョンを表示し、終了します.")
 	return opts, flags
@@ -116,12 +119,15 @@ func parseOptions(args []string) (*options, []string, *DachsurlError) {
 	return opts, flags.Args(), nil
 }
 
-func shortenEach(bitly *dachsurl.Bitly, config *dachsurl.Config, url string) error {
+func shortenEach(opts *options, bitly *dachsurl.Bitly, config *dachsurl.Config, url string) error {
 	result, err := bitly.Shorten(config, url)
 	if err != nil {
 		return err
 	}
 	fmt.Println(result)
+	if opts.flagSet.clipboardFlag {
+		clipboard.WriteAll(result.Shorten)
+	}
 	return nil
 }
 
@@ -164,7 +170,7 @@ func perform(opts *options, args []string) *DachsurlError {
 		})
 	case dachsurl.Shorten:
 		return performImpl(args, func(url string) error {
-			return shortenEach(bitly, config, url)
+			return shortenEach(opts, bitly, config, url)
 		})
 	}
 	return nil
