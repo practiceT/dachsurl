@@ -52,7 +52,7 @@ jobs:
           args: >-
             --standalone
             --output=docs/public/index.html
-            --metadata tilte="urleap"
+            --metadata tilte="dachsurl"
             README.md
       - name: Deploy Site
         uses: peaceiris/actions-gh-pages@v3
@@ -84,4 +84,4 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            dist/urleap-${{ steps.vars.outputs.tag }}_*.tar.gz
+            dist/dachsurl-${{ steps.vars.outputs.tag }}_*.tar.gz
