@@ -11,10 +11,12 @@ URL短縮ツール(開発中) 🥺
 ![GitHub](https://img.shields.io/github/license/practiceT/dachsurl?style=plastic)
 ![Version](https://img.shields.io/badge/Version-0.1.9-informational)
 
+
 ## 概要
 CLIによるシンプルなURL短縮ツール。
 入力した冗長なURLをダックスフントの足のように短くします。
 URLや足を長くしたいというご要望にはお応えできません。
+
 
 ## 使用方法
 ```
@@ -31,6 +33,8 @@ ARGUMENT
     URL     URLは短縮用のURLを指定します。この引数は複数指定できます.
             引数が指定されていない場合、dachsurlは利用可能な短縮URLのリストを表示します.
 ```
+※ 「-c, --clipboard」オプションを指定した状態で、複数URLを指定すると、一番最後のURLがクリップボードにコピーされます.
+
 
 ## プロジェクトについて
 
