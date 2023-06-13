@@ -1,5 +1,5 @@
 # dachsurl
-URL短縮ツール(開発中) :pleading_face:
+URL短縮ツール(開発中) 🥺
 
 <!-- https://www.apache.org/licenses/LICENSE-2.0 -->
 
@@ -57,8 +57,8 @@ HAYASHI Tomokazu
   - State changes
 
 ### アイコン
-<!-- ![Icon](docs/images/dachsurl.svg) -->
-<img src="docs/images/dachsurl.svg" width="50%">
+<!-- ![Icon](docs/images/static/dachsurl.svg) -->
+<img src="docs/images/static/dachsurl.svg" width="50%">
 
 ### 名前の由来
 URLをダックスフント(Dachshund)の足のように短くするという由来です。
