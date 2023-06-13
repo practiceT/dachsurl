@@ -1,3 +1,5 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://practicet.github.io/dachsurl2
+languageCode = "ja-JP"
+title = "dachsurl"
+theme = "hugo_theme_adam_eve"
+defaultContentLanguage = "ja"

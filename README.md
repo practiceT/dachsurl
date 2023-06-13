@@ -57,8 +57,8 @@ HAYASHI Tomokazu
   - State changes
 
 ### アイコン
-<!-- ![Icon](docs/images/static/dachsurl.svg) -->
-<img src="docs/images/static/dachsurl.svg" width="50%">
+<!-- ![Icon](docs/static/images/dachsurl.svg) -->
+<img src="docs/static/images/dachsurl.svg" width="50%">
 
 ### 名前の由来
 URLをダックスフント(Dachshund)の足のように短くするという由来です。
