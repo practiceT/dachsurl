@@ -9,7 +9,7 @@ URL短縮ツール(開発中) 🥺
 [![Go Report Card](https://goreportcard.com/badge/github.com/practiceT/dachsurl)](https://goreportcard.com/report/github.com/practiceT/dachsurl)
 
 ![GitHub](https://img.shields.io/github/license/practiceT/dachsurl?style=plastic)
-![Version](https://img.shields.io/badge/Version-0.1.6-informational)
+![Version](https://img.shields.io/badge/Version-0.1.7-informational)
 
 ## 概要
 CLIによるシンプルなURL短縮ツール。
@@ -57,8 +57,8 @@ HAYASHI Tomokazu
   - State changes
 
 ### アイコン
-<!-- ![Icon](docs/images/static/dachsurl.svg) -->
-<img src="docs/images/static/dachsurl.svg" width="50%">
+<!-- ![Icon](docs/static/images/dachsurl.svg) -->
+<img src="docs/static/images/dachsurl.svg" width="50%">
 
 ### 名前の由来
 URLをダックスフント(Dachshund)の足のように短くするという由来です。
