@@ -1,4 +1,4 @@
-baseURL = "https://practicet.github.io/dachsurl2
+baseURL = "https://practicet.github.io/dachsurl"
 languageCode = "ja-JP"
 title = "dachsurl"
 theme = "hugo_theme_adam_eve"
