@@ -1,5 +1,0 @@
-baseURL = "https://practicet.github.io/dachsurl"
-languageCode = "ja-JP"
-title = "dachsurl"
-theme = "hugo_theme_adam_eve"
-defaultContentLanguage = "ja"

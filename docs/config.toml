@@ -1,0 +1,27 @@
+baseURL = "https://practicet.github.io/dachsurl"
+theme = "hugo_theme_adam_eve"
+EnableGitInfo = true
+pygmentsstyle = 'monokai'
+
+DefaultContentLanguage = "ja"
+# Enable Emoji, regarding https://www.webfx.com/tools/emoji-cheat-sheet/
+enableEmoji = true
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.105.0"
+
+[Languages]
+[Languages.ja]
+languageCode = "ja"
+title = "dachsurl"
+
+[Languages.ja.params]
+description = "CLIによるシンプルなURL短縮ツール"
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 6
+    ordered = false
+    startLevel = 1
