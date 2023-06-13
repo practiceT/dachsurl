@@ -1,5 +1,7 @@
 baseURL = "https://practicet.github.io/dachsurl"
 theme = "hugo_theme_adam_eve"
+EnableGitInfo = true
+pygmentsstyle = 'monokai'
 
 DefaultContentLanguage = "ja"
 # Enable Emoji, regarding https://www.webfx.com/tools/emoji-cheat-sheet/
