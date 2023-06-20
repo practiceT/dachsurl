@@ -67,8 +67,16 @@ jobs:
           extended: true
 
       - name: Build Site
-        run:
+        run: |
           make -C docs build_with_hugo
+          git commit -a -m "update document" || true
+
+      - name: Push branch
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          directory: docs/public
 
       - name: Create Distributions
         run:
