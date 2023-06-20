@@ -9,7 +9,7 @@ URL短縮ツール(開発中) 🥺
 [![Go Report Card](https://goreportcard.com/badge/github.com/practiceT/dachsurl)](https://goreportcard.com/report/github.com/practiceT/dachsurl)
 
 ![GitHub](https://img.shields.io/github/license/practiceT/dachsurl?style=plastic)
-![Version](https://img.shields.io/badge/Version-0.1.15-informational)
+![Version](https://img.shields.io/badge/Version-0.1.16-informational)
 
 
 ## 概要
