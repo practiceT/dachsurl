@@ -1,5 +1,5 @@
 # dachsurl
-URL短縮ツール(開発中) 🥺
+URL短縮ツール(開発中) :pleading_face:
 
 <!-- https://www.apache.org/licenses/LICENSE-2.0 -->
 
@@ -60,23 +60,24 @@ HAYASHI Tomokazu
 [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 - Permissions
-  - ✅ Commercial use
-  - ✅ Modification
-  - ✅ Distribution
-  - ✅ Patent use
-  - ✅ Private use
+  - :check_mark_button: Commercial use
+  - :check_mark_button: Modification
+  - :check_mark_button: Distribution
+  - :check_mark_button: Patent use
+  - :check_mark_button: Private use
 
 - Limitations
-  - ❌ Trademark use
-  - ❌ Liability
-  - ❌ Warranty
+  - :cross_mark: Trademark use
+  - :cross_mark: Liability
+  - :cross_mark: Warranty
 
 - Conditions
   - License and copyright notice
   - State changes
 
 ### アイコン
-<img src="./docs/static/images/dachsurl.svg" width="50%">
+<!-- <img src="./docs/static/images/dachsurl.svg" width="50%"> -->
+![アイコン](./docs/static/images/dachsurl.svg)
 
 ### 名前の由来
 URLをダックスフント(Dachshund)の足のように短くするという由来です。

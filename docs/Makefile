@@ -1,11 +1,13 @@
 SOURCE	= ../README.md
-TARGET	= ./content/_index.md
+TARGET_DIR	= ./content
+TARGET_FILE	= $(TARGET_DIR)/_index.md
 
 build_with_hugo: clean
-	@cp $(SOURCE) $(TARGET)
-	@sed -i -e 's/.\/docs\/static\/images/.\/images/g' $(TARGET)
+	@mkdir -p $(TARGET_DIR)
+	@cp $(SOURCE) $(TARGET_FILE)
+	@sed -i -e 's/.\/docs\/static\/images/.\/images/g' $(TARGET_FILE)
 	hugo --ignoreCache
 
 clean:
 	rm -rf public/*
-	rm -f $(TARGET)
+	rm -rf $(TARGET_DIR)
