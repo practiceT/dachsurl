@@ -9,7 +9,7 @@ URL短縮ツール(開発中) :pleading_face:
 [![Go Report Card](https://goreportcard.com/badge/github.com/practiceT/dachsurl)](https://goreportcard.com/report/github.com/practiceT/dachsurl)
 
 ![GitHub](https://img.shields.io/github/license/practiceT/dachsurl?style=plastic)
-![Version](https://img.shields.io/badge/Version-0.1.21-informational)
+![Version](https://img.shields.io/badge/Version-0.1.23-informational)
 
 
 ## 概要
@@ -59,25 +59,31 @@ HAYASHI Tomokazu
 ### ライセンス
 [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-- Permissions
-  - :check_mark_button: Commercial use
-  - :check_mark_button: Modification
-  - :check_mark_button: Distribution
-  - :check_mark_button: Patent use
-  - :check_mark_button: Private use
+| Permissions | |
+| :--- | :---: |
+| Commercial use | :white_check_mark: |
+| Modification | :white_check_mark: |
+| Distribution | :white_check_mark: |
+| Patent use | :white_check_mark: |
+| Private use | :white_check_mark: |
 
-- Limitations
-  - :cross_mark: Trademark use
-  - :cross_mark: Liability
-  - :cross_mark: Warranty
+| Limitations | |
+| :--- | :---: |
+| Trademark use | :x: |
+| Liability | :x: |
+| Warranty | :x: |
 
-- Conditions
-  - License and copyright notice
-  - State changes
+| Conditions | |
+| :--- | :---: |
+| License and copyright notice | :information_source: |
+| State changes | :information_source: |
 
 ### アイコン
-<!-- <img src="./docs/static/images/dachsurl.svg" width="50%"> -->
-![アイコン](./docs/static/images/dachsurl.svg)
+| ![アイコン](./docs/static/images/dachsurl.svg) | ![アイコン](./docs/static/images/dachsurl.svg) |
+| :---: | :---: |
+| ![アイコン](./docs/static/images/dachsurl.svg) | ![アイコン](./docs/static/images/dachsurl.svg) |
+| ![アイコン](./docs/static/images/dachsurl.svg) | ![アイコン](./docs/static/images/dachsurl.svg) |
+
 
 ### 名前の由来
 URLをダックスフント(Dachshund)の足のように短くするという由来です。
