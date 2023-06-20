@@ -77,10 +77,11 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          working-directory: docs/public
+          directory: docs/public
 
       - name: Create Distributions
-        run:
+        run: |
+          pwd
           make dist
 
       - name: Create release
