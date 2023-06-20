@@ -69,7 +69,7 @@ jobs:
       - name: Build Site
         run: |
           make -C docs build_with_hugo
-          git add docs
+          cd docs/public ; git add .
           git commit -a -m "update document" || true
 
       - name: Push branch
