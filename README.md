@@ -36,6 +36,21 @@ ARGUMENT
 ※ 「-c, --clipboard」オプションを指定した状態で、複数URLを指定すると、一番最後のURLがクリップボードにコピーされます.
 
 
+<!-- ## インストール方法
+
+### Homebrew
+
+```
+brew install practicet/brew/dachshurl
+```
+
+### Docker
+
+```
+docker run -it --rm practicet/dachshurl:latest -t <token> <url...>
+``` -->
+
+
 ## プロジェクトについて
 
 ### 開発者
