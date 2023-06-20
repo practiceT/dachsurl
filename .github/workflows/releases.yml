@@ -80,8 +80,7 @@ jobs:
           directory: docs/public
 
       - name: Create Distributions
-        run: |
-          pwd
+        run:
           make dist
 
       - name: Create release
