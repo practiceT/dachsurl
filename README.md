@@ -9,7 +9,7 @@ URL短縮ツール(開発中) :pleading_face:
 [![Go Report Card](https://goreportcard.com/badge/github.com/practiceT/dachsurl)](https://goreportcard.com/report/github.com/practiceT/dachsurl)
 
 ![GitHub](https://img.shields.io/github/license/practiceT/dachsurl?style=plastic)
-![Version](https://img.shields.io/badge/Version-0.1.23-informational)
+![Version](https://img.shields.io/badge/Version-0.1.28-informational)
 
 
 ## 概要
@@ -17,6 +17,9 @@ CLIによるシンプルなURL短縮ツール。
 入力した冗長なURLをダックスフントの足のように短くします。
 URLや足を長くしたいというご要望にはお応えできません。
 
+## 公式ドキュメント
+[![アイコン](./docs/static/images/war_bakuha_switch_off.png)](https://practicet.github.io/dachsurl/)
+ボタンをクリックすると、公式ドキュメントへ移動します。
 
 ## 使用方法
 ```
