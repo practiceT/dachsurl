@@ -1,7 +1,9 @@
 baseURL = "https://practicet.github.io/dachsurl"
 theme = "hugo_theme_adam_eve"
 EnableGitInfo = true
-pygmentsstyle = 'monokai'
+# pygmentsstyle = 'monokai'
+pygmentsstyle = 'rose-pine-dawn'
+
 
 DefaultContentLanguage = "ja"
 # Enable Emoji, regarding https://www.webfx.com/tools/emoji-cheat-sheet/
@@ -18,7 +20,7 @@ languageCode = "ja"
 title = "dachsurl"
 
 [Languages.ja.params]
-description = "CLIによるシンプルなURL短縮ツール"
+description = "< CLIによるシンプルなURL短縮ツール >"
 
 [markup]
   [markup.tableOfContents]

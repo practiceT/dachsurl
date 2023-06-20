@@ -1,9 +1,9 @@
-PACKAGE_LIST := $(shell go list ./...)
-VERSION := 0.1.21
-NAME := dachsurl
-USER_NAME := practiceT
-REPO_NAME := $(USER_NAME)/$(NAME)
-DIST := $(NAME)-$(VERSION)
+VERSION	:= 0.1.21
+NAME	:= dachsurl
+DIST	:= $(NAME)-$(VERSION)
+USER_NAME	:= practiceT
+REPO_NAME	:= $(USER_NAME)/$(NAME)
+PACKAGE_LIST	:= $(shell go list ./...)
 
 $(NAME): coverage.out cmd/$(NAME)/main.go *.go
 	go build -o $(NAME) cmd/$(NAME)/main.go
