@@ -77,7 +77,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          directory: docs/public
+          working-directory: docs/public
 
       - name: Create Distributions
         run:
