@@ -1,5 +1,5 @@
 PACKAGE_LIST := $(shell go list ./...)
-VERSION := 0.1.17
+VERSION := 0.1.18
 NAME := dachsurl
 USER_NAME := practiceT
 REPO_NAME := $(USER_NAME)/$(NAME)
