@@ -1,2 +1,2 @@
 build_with_hugo:
-	hugo
+	hugo --ignoreCache
