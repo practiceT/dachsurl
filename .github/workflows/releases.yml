@@ -45,21 +45,6 @@ jobs:
         run:
           make
 
-      # pandoc で README を html に変換する．とりあえず．
-      # - name: Build Site
-      #   uses: docker://pandoc/core:3.1.1
-      #   with:
-      #     args: >-
-      #       --standalone
-      #       --output=docs/public/index.html
-      #       --metadata tilte="dachsurl"
-      #       README.md
-      # - name: Deploy Site
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./docs/public
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -69,7 +54,7 @@ jobs:
       - name: Build Site
         run: |
           make -C docs build_with_hugo
-          cd docs/public ; git add .
+          (cd docs/public ; git add .)
           git commit -a -m "update document" || true
 
       - name: Push branch
