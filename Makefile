@@ -6,7 +6,8 @@ REPO_NAME	:= $(USER_NAME)/$(NAME)
 PACKAGE_LIST	:= $(shell go list ./...)
 
 $(NAME): coverage.out cmd/$(NAME)/main.go *.go
-	go build -o $(NAME) cmd/$(NAME)/main.go
+	go build -o $(NAME) cmd/$(NAME)/main.go cmd/$(NAME)/generate_completion.go
+# 	go build -o $(NAME) cmd/$(NAME)/main.go
 
 coverage.out:
 	go test -covermode=count \
@@ -39,3 +40,4 @@ distclean: clean
 
 clean:
 	rm -f $(NAME) coverage.out
+	rm -rf completions cmd/dachsurl/completions

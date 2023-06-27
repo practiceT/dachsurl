@@ -20,6 +20,13 @@ func Example_Delete() {
 	// トークンが指定されていません
 }
 
+func Example_Completion() {
+	goMain([]string{"./dachsurl", "--generate-completions"})
+	// Output:
+	// generate-completions(^^)
+	// トークンが指定されていません
+}
+
 func Example_Help() {
 	goMain([]string{"./dachsurl", "--help"})
 	// Output:

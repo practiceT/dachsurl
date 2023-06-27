@@ -84,6 +84,8 @@ func (opts *options) mode(args []string) dachsurl.Mode {
 	}
 }
 
+var completions bool
+
 /*
 Define the options and return the pointer to the options and the pointer to the flagset.
 */
@@ -94,6 +96,8 @@ func buildOptions(args []string) (*options, *flag.FlagSet) {
 	flags.StringVarP(&opts.runOpt.token, "token", "t", "", "bit.lyのトークンを指定します. (必須オプション)")
 	flags.BoolVarP(&opts.flagSet.deleteFlag, "delete", "d", false, "指定した短縮URLを削除します.")
 	flags.BoolVarP(&opts.flagSet.clipboardFlag, "clipboard", "c", false, "短縮URLをクリップボードに出力します.")
+	flags.BoolVarP(&completions, "generate-completions", "", false, "completionsを生成します.")
+	flags.MarkHidden("generate-completions")
 	flags.BoolVarP(&opts.flagSet.helpFlag, "help", "h", false, "このメッセージを表示し、終了します.")
 	flags.BoolVarP(&opts.flagSet.versionFlag, "version", "v", false, "バージョンを表示し、終了します.")
 	return opts, flags
@@ -105,6 +109,10 @@ parseOptions parses options from the given command line arguments.
 func parseOptions(args []string) (*options, []string, *DachsurlError) {
 	opts, flags := buildOptions(args)
 	flags.Parse(args[1:])
+	if completions {
+		fmt.Println("generate-completions(^^)")
+		GenerateCompletion(flags)
+	}
 	if opts.flagSet.helpFlag {
 		fmt.Println(helpMessage(args))
 		return nil, nil, &DachsurlError{statusCode: 0, message: ""}
