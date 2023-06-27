@@ -1,9 +1,9 @@
-VERSION	:= 0.1.28
-NAME	:= dachsurl
-DIST	:= $(NAME)-$(VERSION)
-USER_NAME	:= practiceT
-REPO_NAME	:= $(USER_NAME)/$(NAME)
-PACKAGE_LIST	:= $(shell go list ./...)
+VERSION := 0.1.34
+NAME := dachsurl
+DIST := $(NAME)-$(VERSION)
+USER_NAME := practiceT
+REPO_NAME := $(USER_NAME)/$(NAME)
+PACKAGE_LIST := $(shell go list ./...)
 
 # $(NAME): coverage.out cmd/$(NAME)/main.go *.go
 # $(NAME): coverage.out cmd/$(NAME)/main.go cmd/$(NAME)/generate_completion.go *.go
