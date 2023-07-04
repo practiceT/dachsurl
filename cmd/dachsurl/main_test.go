@@ -14,6 +14,12 @@ func Example_Token() {
 	// トークンが指定されていません
 }
 
+func Example_Clipboard() {
+	goMain([]string{"./dachsurl", "--clipboard"})
+	// Output:
+	// トークンが指定されていません
+}
+
 func Example_Delete() {
 	goMain([]string{"./dachsurl", "--delete"})
 	// Output:
@@ -42,8 +48,32 @@ func Example_Help() {
 	//             引数が指定されていない場合、dachsurlは利用可能な短縮URLのリストを表示します.
 }
 
-func Test_Main(t *testing.T) {
+func Test_Main_Help(t *testing.T) {
+	if status := goMain([]string{"./dachsurl", "-h"}); status != 0 {
+		t.Error("Expected 0, got ", status)
+	}
+}
+
+func Test_Main_Version(t *testing.T) {
 	if status := goMain([]string{"./dachsurl", "-v"}); status != 0 {
 		t.Error("Expected 0, got ", status)
+	}
+}
+
+func Test_Main_Token(t *testing.T) {
+	if status := goMain([]string{"./dachsurl", "-t"}); status != 3 {
+		t.Error("Expected 3, got ", status)
+	}
+}
+
+func Test_Main_Clipboard(t *testing.T) {
+	if status := goMain([]string{"./dachsurl", "-c"}); status != 3 {
+		t.Error("Expected 3, got ", status)
+	}
+}
+
+func Test_Main_Delete(t *testing.T) {
+	if status := goMain([]string{"./dachsurl", "-d"}); status != 3 {
+		t.Error("Expected 3, got ", status)
 	}
 }
