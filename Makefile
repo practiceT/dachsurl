@@ -1,4 +1,4 @@
-VERSION := 0.1.37
+VERSION := 0.1.38
 NAME := dachsurl
 DIST := $(NAME)-$(VERSION)
 USER_NAME := practicet
