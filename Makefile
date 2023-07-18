@@ -1,7 +1,7 @@
-VERSION := 0.1.37
+VERSION := 0.1.39
 NAME := dachsurl
 DIST := $(NAME)-$(VERSION)
-USER_NAME := practiceT
+USER_NAME := practicet
 REPO_NAME := $(USER_NAME)/$(NAME)
 PACKAGE_LIST := $(shell go list ./...)
 

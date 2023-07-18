@@ -9,7 +9,7 @@ URL短縮ツール(開発中) :pleading_face:
 [![Go Report Card](https://goreportcard.com/badge/github.com/practiceT/dachsurl)](https://goreportcard.com/report/github.com/practiceT/dachsurl)
 
 ![GitHub](https://img.shields.io/github/license/practiceT/dachsurl?style=plastic)
-![Version](https://img.shields.io/badge/Version-0.1.37-informational)
+![Version](https://img.shields.io/badge/Version-0.1.39-informational)
 
 
 ## 概要
@@ -41,18 +41,18 @@ ARGUMENT
 ※ 「-c, --clipboard」オプションを指定した状態で、複数URLを指定すると、一番最後のURLがクリップボードにコピーされます.
 
 
-<!-- ## インストール方法
+## インストール方法
+### Docker
+```
+docker pull ghcr.io/practicet/dachsurl:latest
 
-### Homebrew
+docker run -it --rm ghcr.io/practicet/dachshurl:latest -t <token> <url...>
+```
+
+<!-- ### Homebrew
 
 ```
 brew install practicet/brew/dachshurl
-```
-
-### Docker
-
-```
-docker run -it --rm practicet/dachshurl:latest -t <token> <url...>
 ``` -->
 
 
