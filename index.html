@@ -30,7 +30,7 @@
 <a href="https://codebeat.co/projects/github-com-practicet-dachsurl-main"><img src="https://codebeat.co/badges/518faef1-bda5-47e1-9083-0414106885b8" alt="codebeat badge"></a>
 <a href="https://goreportcard.com/report/github.com/practiceT/dachsurl"><img src="https://goreportcard.com/badge/github.com/practiceT/dachsurl" alt="Go Report Card"></a></p>
 <p><img src="https://img.shields.io/github/license/practiceT/dachsurl?style=plastic" alt="GitHub">
-<img src="https://img.shields.io/badge/Version-0.1.37-informational" alt="Version"></p>
+<img src="https://img.shields.io/badge/Version-0.1.39-informational" alt="Version"></p>
 <h2 id="概要">概要</h2>
 <p>CLIによるシンプルなURL短縮ツール。
 入力した冗長なURLをダックスフントの足のように短くします。
@@ -52,7 +52,12 @@ ARGUMENT
     URL     URLは短縮用のURLを指定します。この引数は複数指定できます.
             引数が指定されていない場合、dachsurlは利用可能な短縮URLのリストを表示します.
 </code></pre><p>※ 「-c, &ndash;clipboard」オプションを指定した状態で、複数URLを指定すると、一番最後のURLがクリップボードにコピーされます.</p>
-<!-- raw HTML omitted -->
+<h2 id="インストール方法">インストール方法</h2>
+<h3 id="docker">Docker</h3>
+<pre tabindex="0"><code>docker pull ghcr.io/practicet/dachsurl:latest
+
+docker run -it --rm ghcr.io/practicet/dachshurl:latest -t &lt;token&gt; &lt;url...&gt;
+</code></pre><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <h2 id="プロジェクトについて">プロジェクトについて</h2>
 <h3 id="開発者">開発者</h3>
